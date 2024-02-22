@@ -4,22 +4,22 @@ class Program
 {
     static void Main()
     {
-        int[] array = { 1, 2, 3, 4, 5 }; // Произвольный массив
+        int M = 1; // Начальное значение промежутка
+        int N = 10; // Конечное значение промежутка
 
-        // Выводим элементы массива, начиная с конца
-        PrintArrayReversed(array, array.Length - 1);
+        PrintNaturalNumbers(M, N);
     }
 
-    static void PrintArrayReversed(int[] array, int index)
+    static void PrintNaturalNumbers(int start, int end)
     {
-        // Базовый случай: если индекс выходит за границы массива, завершаем рекурсию
-        if (index < 0)
+        // Базовый случай: если начальное значение больше конечного, завершаем рекурсию
+        if (start > end)
             return;
 
-        // Выводим текущий элемент массива
-        Console.WriteLine(array[index]);
+        // Выводим текущее значение
+        Console.WriteLine(start);
 
-        // Рекурсивно вызываем функцию для предыдущего элемента
-        PrintArrayReversed(array, index - 1);
+        // Рекурсивно вызываем функцию для следующего значения
+        PrintNaturalNumbers(start + 1, end);
     }
 }
